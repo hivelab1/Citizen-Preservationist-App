@@ -1,16 +1,21 @@
 # Citizen Preservationist
-Unity application for participatory site-stewardship + auxillary scripts
+### Unity application for participatory site-stewardship + auxillary scripts
 
-University of California, Merced
+### University of California, Merced
 
-Principal Investigator: Nicola Lercari
+#### Principal Investigator:
+Nicola Lercari
 
-Paper: Nicola Lercari, Denise Jaffke
+#### Paper:
+Nicola Lercari, Denise Jaffke
 
-Authors:
+#### Authors:
 
-  Unity CitPres App/ Development: Michael Ngo, Tarandeep Singh, Athena Siaotong
+  ##### Unity CitPres App/ Development:
+  Michael Ngo, Tarandeep Singh, Athena Siaotong
 
-  Auxiliary Script Development: Michael Ngo
+  ##### Auxiliary Script Development:
+  Michael Ngo
 
-  Unity CitPres Map / Development: Jad Abhoulson, Michael Ngo, Tarandeep Singh
+  ##### Unity CitPres Map / Development:
+  Jad Abhoulson, Michael Ngo, Tarandeep Singh
