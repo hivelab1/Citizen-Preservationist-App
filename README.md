@@ -1,14 +1,16 @@
 # Citizen Preservationist
-M3C2 Material Loss Calculation for MATLAB
+Unity application for participatory site-stewardship + auxillary scripts
 
 University of California, Merced
 
+Principal Investigator: Nicola Lercari
+
+Paper: Nicola Lercari, Denise Jaffke
+
 Authors:
 
-Paper: Nicola Lercari, Arianna Campiani, Ashley Lingle
+  Unity CitPres App/ Development: Michael Ngo, Tarandeep Singh, Athena Siaotong
 
-Unity C# Code: Michael Ngo, Tarandeep Singh
+  Auxiliary Script Development: Michael Ngo
 
-Citation to Dataset:
-
-Campiani, Arianna; Lercari, Nicola; Lingle, Ashley; Dahabra, Moataz; Dueñas García, Manuel; García, Estrella; Yang, Tristan; Flynn, John; Reps, Christopher (2018). Data from: Spatial Analysis and Heritage Conservation: Leveraging 3-D Data and GIS for Monitoring Çatalhöyük Earthen Architecture. UC San Diego Library Digital Collections. https://doi.org/10.6075/J0WD3XS8
+  Unity CitPres Map / Development: Jad Abhoulson, Michael Ngo, Tarandeep Singh
