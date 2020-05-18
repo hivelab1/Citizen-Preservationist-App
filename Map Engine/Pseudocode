@@ -1,0 +1,11 @@
+The following high-level pseudocode was created as a reader’s guide for non-programmers to understand the functionalities of the Map Engine component of this project, used to display given data points. Readers with a stronger technical background will find more nuanced information on the functionalities of the routine directly in the heavily-commented source code.
+
+1) For our purposes, we used a one-time use script with hardcoded values that took in the dimensions of the map we wanted to overlay data on top of, as well as the coordinates in WGS84 format in all four corners of the real location that corrosponded with locations on the map.
+
+From there, using the known gps coordinates of corners of the image, along with a relatively accurate scaled ration of pixel to gps coordinate, we can roughly calculate the approximate all data point locations on the image map.
+
+2) Once the Map Engine is launched, the user is prompted to navigate to a folder containing all data points, sorted in subfolders by date. These folders should automatically be done once the data is taken from the CitPres application.
+
+3) The application then traverses every subfolder, loading all of the data and importing them into the map engine on different pages, so that they can be hid and shown individually.
+
+4) The main page of the Map Engine includes the ability to scroll the entirety of the map to see all data points, scroll through the given timeline of data points, and change the given folder using a button in the top right corner.
