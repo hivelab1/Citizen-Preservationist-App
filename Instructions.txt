@@ -1,0 +1,23 @@
+Android + Windows PC
+
+App Install
+1. Enable Developer options in your Android settings 
+2. Downloading the .apk Android app intall file in a known location in your smartphone from email or connecting it to your PC via usb
+3. Browse your internal storage to that location, double tap on the apk, and follow instructions to install
+
+Open the app
+1. Launch the app
+2. Align object you want to capture with crosshair/viewfinder
+3. Tap the screen
+4. If the picture is not to your liking, tap back in the top left corner
+5. Fill out as many metadata in the form as you can
+6. Tap save
+7. Repeat until data capture session is done
+
+Retrieve data
+1. Connect your smartphone to PC via usb
+2. Navigate to /Android/data/com.HiveLab.CitizenScience/files/Artifacts/current Date
+3. Copy the json file (collected data) to a know location in your PC
+3. Transfer "Convert and Save.exe" to this folder
+4. Double click Convert and Save.exe
+5. the json file is now converted in a .png image and metadata into a.csv file (ready to import in your GIS of choice)  
