@@ -285,7 +285,7 @@ public class SavePicture : MonoBehaviour
             this.Condition = Condition;
             this.Picture = Picture;
             this.Identifer = Identifier;
-            this.Place1Name = IdentificationManager.instance.LocationID;
+            this.Place1Name = IdentificationManager.LocationID;
         }
 
         private double ConvertInToCm(double measurement)

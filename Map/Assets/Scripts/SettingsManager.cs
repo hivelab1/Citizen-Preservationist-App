@@ -1,9 +1,9 @@
+using SFB;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-using SFB;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class SettingsManager : MonoBehaviour
     MapConfig mapConfig;
     public TextAsset mapCfg;
     Vector2 mapSize;
+    public RawImage mapImage;
     public List<Blip> blipData;
     public GameObject blipPrefab;
     public Transform blipParent;
@@ -44,31 +45,37 @@ public class SettingsManager : MonoBehaviour
 
     private void Awake()
     {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
         mapSize = blipParent.GetComponent<RectTransform>().sizeDelta;
         if (PlayerPrefs.HasKey("Path"))
         {
             folderPath = PlayerPrefs.GetString("Path");
-            PopulateMap();
+            PopulateMap(Welcome.defaultMap);
         }
         else
         {
             folderPath = Application.persistentDataPath;
             ChooseFolder();
         }
-        
+
         openedBlipPanel.SetActive(false);
         blockScrollview.SetActive(false);
     }
-    
+
     public void ChooseFolder()
     {
-        try{
+        try
+        {
             folderPath = StandaloneFileBrowser.OpenFolderPanel("", folderPath, false)[0];
             PlayerPrefs.SetString("Path", folderPath);
-            PopulateMap();
-            
+            PopulateMap(Welcome.defaultMap);
+
         }
-        catch(Exception e)
+        catch (Exception)
         {
             // Add popup here (modal dialog) to indicate the error.
         }
@@ -83,7 +90,8 @@ public class SettingsManager : MonoBehaviour
                 page.SetActive(true);
                 label.text = "Showing All";
             }
-        }else
+        }
+        else
         {
             for (int i = 0; i < pages.Count; i++)
             {
@@ -91,7 +99,8 @@ public class SettingsManager : MonoBehaviour
                 {
                     pages[i].SetActive(true);
                     label.text = pages[i].name;
-                }else
+                }
+                else
                 {
                     pages[i].SetActive(false);
                 }
@@ -99,9 +108,19 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    public void PopulateMap()
+    public void PopulateMap(bool defaultMap)
     {
-        mapConfig = JsonUtility.FromJson<MapConfig>(mapCfg.text);
+        if (!defaultMap)
+        {
+            mapConfig = new MapConfig();
+            mapImage = Resources.Load<RawImage>("Map/Map");
+            mapSize = blipParent.GetComponent<RectTransform>().sizeDelta;
+        }
+        else
+        {
+            mapConfig = JsonUtility.FromJson<MapConfig>(mapCfg.text);
+        }
+
         if (pages != null && pages.Count > 0)
         {
             foreach (GameObject page in pages)
@@ -223,5 +242,54 @@ public class SettingsManager : MonoBehaviour
 
         public double pixelRatioX;
         public double pixelRatioY;
+
+        public MapConfig()
+        {
+            Location location1 = JsonUtility.FromJson<Location>(Resources.Load<TextAsset>("Map/location1").text);
+            Location location2 = JsonUtility.FromJson<Location>(Resources.Load<TextAsset>("Map/location2").text);
+
+            double dYGlobal = location1.WSGLat - location2.WSGLat;
+            double dXGlobal = location1.WSGLong - location2.WSGLong;
+
+            int dXLocal = location1.pxX - location2.pxX;
+            int dYLocal = location1.pxY - location2.pxY;
+
+            double xScalar = dXGlobal / dXLocal;
+            double yScalar = dYGlobal / dYLocal;
+
+            double leftOffsetA = location1.WSGLong - (xScalar * location1.pxX);
+            double topOffsetA = location1.WSGLat - (yScalar * location1.pxY);
+
+            double leftOffsetB = location2.WSGLong - (xScalar * location2.pxX);
+            double topOffsetB = location2.WSGLat - (yScalar * location2.pxY);
+
+            double leftCornerGlobal = (leftOffsetA + leftOffsetB) / 2;
+            double topCornerGlobal = (topOffsetA + topOffsetB) / 2;
+
+            double pxRatioAX = (location1.WSGLong - leftCornerGlobal) / location1.pxX;
+            double pxRatioAY = (location1.WSGLat - topCornerGlobal) / location1.pxY;
+
+            double pxRatioBX = (location2.WSGLong - leftCornerGlobal) / location2.pxX;
+            double pxRatioBY = (location2.WSGLat - topCornerGlobal) / location2.pxY;
+
+            double pxRatioX = (pxRatioAX + pxRatioBX) / 2;
+            double pxRatioY = (pxRatioAY + pxRatioBY) / 2;
+
+            leftWGS84Corner = leftCornerGlobal;
+            topWGS84Corner = topCornerGlobal;
+            pixelRatioX = pxRatioX;
+            pixelRatioY = pxRatioY;
+        }
+
+    }
+
+    [Serializable]
+    public class Location
+    {
+        public int pxX;
+        public int pxY;
+
+        public double WSGLat;
+        public double WSGLong;
     }
 }

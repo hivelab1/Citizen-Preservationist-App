@@ -36,14 +36,6 @@ for folder in folderNames:
     txt_files = [f for f in os.listdir(folder) if f.endswith('.json')]
     
     with open(os.path.join(cwd, "{}.json".format(folder)), "w") as manifest:
-#               manifestData = {"Name"
-#                        "Latitude"
-#                        "Longitude"
-#                        "Era"
-#                        "Material"
-#                        "Size"
-#                        "ArtifactClass"
-#                        "Description"}
         
         manifestData = {}
         manifestData["data"] = []
@@ -52,12 +44,12 @@ for folder in folderNames:
         #Iterates through each file
         for fileName in txt_files:
             
-            #Reads from the file
+           #Reads from the file
             with open(os.path.join(cwd, folder, fileName), "r") as jsonFile:
                 
                 #load file into a dictionary and load name for filewriting
                 data = json.load(jsonFile)
-                objectName = data["Name"]
+                objectName = data["Identifer"]
                 
                 #Remove the base64 image data and then remove it from the json
                 objectPicture = data["Picture"]

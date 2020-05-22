@@ -4,6 +4,8 @@ The following high-level pseudocode was created as a reader’s guide for non-pr
 
 From there, using the known gps coordinates of corners of the image, along with a relatively accurate scaled ration of pixel to gps coordinate, we can roughly calculate the approximate all data point locations on the image map.
 
+Alternatively, the application presents the user with a welcome screen that will ask if you want to use the default values we used, or if you want to use custom values, the app will remind the user to confirm that the needed files are present.
+
 2) Once the Map Engine is launched, the user is prompted to navigate to a folder containing all data points, sorted in subfolders by date. These folders should automatically be done once the data is taken from the CitPres application.
 
 3) The application then traverses every subfolder, loading all of the data and importing them into the map engine on different pages, so that they can be hid and shown individually.

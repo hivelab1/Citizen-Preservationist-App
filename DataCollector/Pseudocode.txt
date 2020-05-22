@@ -1,5 +1,9 @@
 The following high-level pseudocode was created as a reader’s guide for non-programmers to understand the functionalities of Citizen Preservationist application. Readers with a stronger technical background will find more nuanced information on the functionalities of the routine directly in the heavily-commented source code.
 
+1) The app opens to a welcome screen that asks the suer for a given, predetermined:
+	a) user unique ID
+	b) session/location unique ID
+
 1) The app opens and scans the target device for cameras to use as the main camera
 	a) for phones, the rear camera is chosen,
 	b) for computers, the first webcam is chosen;

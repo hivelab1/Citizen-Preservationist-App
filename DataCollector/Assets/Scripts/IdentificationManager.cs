@@ -9,8 +9,8 @@ public class IdentificationManager : MonoBehaviour
 
     public InputField UserIDText, LocationIDText;
 
-    public string UserID;
-    public string LocationID;
+    public static string UserID;
+    public static string LocationID;
     private string pool = "0123456789abcdef";
 
     public void Awake()
@@ -20,8 +20,8 @@ public class IdentificationManager : MonoBehaviour
 
     public void SetUserID()
     {
-        instance.UserID = UserIDText.text;
-        instance.LocationID = LocationIDText.text;
+        UserID = UserIDText.text;
+        LocationID = LocationIDText.text;
     }
 
     public string GenerateID()
@@ -31,6 +31,6 @@ public class IdentificationManager : MonoBehaviour
         {
             result = result + string.Format("{0}", pool[Random.Range(0, 16)]);
         }
-        return string.Format("v{0}_{1}", instance.UserID, result);
+        return string.Format("v{0}_{1}", UserID, result);
     }
 }
