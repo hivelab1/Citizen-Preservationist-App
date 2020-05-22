@@ -1,11 +1,16 @@
-The following high-level pseudocode was created as a reader’s guide for non-programmers to understand the functionalities of the Map Engine component of this project, used to display given data points. Readers with a stronger technical background will find more nuanced information on the functionalities of the routine directly in the heavily-commented source code.
+The following high-level pseudocode was created as a reader’s guide for non-programmers to understand the functionalities of the CitPres Map component of this project, used to display given data points. Readers with a stronger technical background will find more nuanced information on the functionalities of the routine directly in the heavily-commented source code.
 
-1) For our purposes, we used a one-time use script with hardcoded values that took in the dimensions of the map we wanted to overlay data on top of, as well as the coordinates in WGS84 format in all four corners of the real location that corrosponded with locations on the map.
+To allow for broader application to any site of cultural significance users can add any map to overlay data captured on top of.
 
-From there, using the known gps coordinates of corners of the image, along with a relatively accurate scaled ration of pixel to gps coordinate, we can roughly calculate the approximate all data point locations on the image map.
+1) Once CitPres Map is launched, a C# script allows for adding any raster map:
+a) where the script takes in a jpeg, png, or tiff image.
+b) where the script takes in the dimensions of the map and coordinates (in WGS84 format) for all four corners of the real location that corresponded with locations on the map.
 
-2) Once the Map Engine is launched, the user is prompted to navigate to a folder containing all data points, sorted in subfolders by date. These folders should automatically be done once the data is taken from the CitPres application.
+2) After the raster map and coordinates are entered, using the known GPS coordinates of corners of the image, along with a relatively accurate scaled ration of pixel to GPS coordinate, the script approximately calculates all data point locations on the image map to allow for artifacts’ real-world coordinates to be plotted on the map.
 
-3) The application then traverses every subfolder, loading all of the data and importing them into the map engine on different pages, so that they can be hid and shown individually.
+3) Once the map setup is complete, the user is prompted to navigate to a folder containing all data points, sorted in subfolders by date. These folders should automatically be done once the data is downloaded from the DataCollector mobile app.
 
-4) The main page of the Map Engine includes the ability to scroll the entirety of the map to see all data points, scroll through the given timeline of data points, and change the given folder using a button in the top right corner.
+4) CitPres Map then traverses every subfolder, loading all the data and importing them into the map engine on different pages, so that they can be hid and shown individually.
+
+5) The main page of the CitPres Map includes the ability to scroll the entirety of the map to see all data points, scroll through the given timeline of data points, and change the given folder using a button in the top right corner.
+
