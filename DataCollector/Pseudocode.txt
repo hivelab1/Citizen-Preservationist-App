@@ -1,32 +1,37 @@
-The following high-level pseudocode was created as a reader’s guide for non-programmers to understand the functionalities of Citizen Preservationist application. Readers with a stronger technical background will find more nuanced information on the functionalities of the routine directly in the heavily-commented source code.
+The following high-level pseudocode was created as a reader’s guide for non-programmers to understand the functionalities of CitPres DataCollector app. Readers with a stronger technical background will find more nuanced information on the functionalities of the routine directly in the heavily-commented source code.
 
-1) The app opens to a welcome screen that asks the suer for a given, predetermined:
+1) The app opens to a welcome screen that asks the user for a given, predetermined:
 	a) user unique ID
 	b) session/location unique ID
 
-1) The app opens and scans the target device for cameras to use as the main camera
-	a) for phones, the rear camera is chosen,
-	b) for computers, the first webcam is chosen;
+2) After these metadata are collected, the user is taken to a simple prompt where she can decide whether to take in-app video training or skip:
+	a) where the user may take the video training.
+	b) where the user may skip and continue with photo taking.
 
-2) A simple text and image is slowly flashed so that the user may be able to see the image, and are reminded to take a picture;
+3) The app initiates the target device for cameras to use as the main camera:
+	a) for phones, the rear camera is chosen.
+	b) for computers, the first webcam is chosen.
 
-3) After the screen is tapped, the user is taken to a page where they can review the image taken:
-	a) where the user may return and retake the picture,
-	b) where the user may accept the given picture as the artifact, and continue to input metadata,
-	c) the location and time is taken and recorded,
+3) A simple text and image are slowly flashed so that the user can see the camera video feed and is reminded to tap to take a picture.
 
-4) Upon confirmation, the user is prompted with a series of entries that provide user entered metadata for the chosen artifact
-	a) where the user may quit out of this artifact and retake a picture,
-	b) where the user may accept the given metadata;
+5) After the screen is tapped, the user is taken to a page where she can review the image taken:
+	a) where the user may return and retake the picture.
+b) where the user may accept the given picture as the artifact and continue to input metadata.
+	c) the location and time are taken and recorded.
 
-5) Once the user enters metadata and moves to review, they are presented with a page that displays all given metadata for review
-	a) where the user may go back and edit the metadata previously entered,
-	b) submit and save the given artifact;
+6) Upon confirmation, the user is prompted with a series of entries that provide user-entered metadata for the chosen artifact:
+	a) where the user may quit out of this artifact and retake a picture.
+	b) where the user may accept the given metadata.
 
-6) When submitting the artifact, the image and all metadata are compressed into a json file where:
-	a) the image is compressed and encrypted into a text format for later  transfer,
-	b) saved to a location that can be locally retrieved from the target device;
+7) Once the user enters metadata and moves to review, she is presented with a page that displays all given metadata for review:
+	a) where the user may go back and edit the metadata previously entered.
+	b) submit and save the given artifact.
 
-7) After saving the json, the user is given confirmation that the file was saved, and:
+8) When submitting the artifact, the image and all metadata are compressed into a json file where:
+	a) the image is compressed and encrypted into a text format for later transfer.
+	b) saved to a location that can be locally retrieved from the target device.
+	c) a copy of the artifact’s picture is also copied into the phone’s default image gallery.
+
+9) After saving the json, the user is given confirmation that the file was saved, and:
 	a) the user may restart from the beginning or,
 	b) quit out of the application entirely.
