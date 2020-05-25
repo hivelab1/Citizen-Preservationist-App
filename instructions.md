@@ -1,23 +1,23 @@
-App Install
+## App Install
 
-Citizen Preservationist
-Android
+### Citizen Preservationist
+#### Android
 1. Enable Developer options in your Android settings 
 2. Downloading the .apk Android app intall file in a known location in your smartphone from email or connecting it to your PC via usb
 3. Browse your internal storage to that location, double tap on the apk, and follow instructions to install
 
-IOS
+#### IOS
 1. Download and build unity project for IOS or download IOS XCode files for local deployment
 2. Using XCode, build application to device using your developer group settings
 
-CitPres Map
-Windows and MacOS
-1. Download desired build folder to yuor location of choice
+### CitPres Map
+#### Windows and MacOS
+1. Download desired build folder to your location of choice
 2. Navigate to said folder and run from there
 
-Using the Apps
+## Using the Apps
 
-Open the app
+### Open the app
 1. Launch the app
 2. Fill in and log the unique user and session/location IDs given to you
 3. Watch given video guide or proceed to step 4
@@ -28,16 +28,16 @@ Open the app
 8. Tap save
 9. Repeat until data capture session is done
 
-Retrieving data
-Android
+### Retrieving data
+#### Android
 1. Connect your smartphone to PC via usb
 2. Navigate to /Android/data/com.HiveLab.CitizenPreservationist/files/Artifacts/current Date
 
-IOS
+#### IOS
 1. Connect your apple device to PC via usb
 2. Navigate to /var/mobile/Containers/Data/Application/<guid>/Documents/Artifacts/current Date
 
-Using Convert and Save
+### Using Convert and Save
 3. Copy the json file (collected data) to a know location in your PC
 3. Transfer "Convert and Save.exe" to this folder
 4. Double click Convert and Save.exe
@@ -46,8 +46,8 @@ Using Convert and Save
 7. The pictures taken are located in /files/Pictures/current Date
 8. The pictures are also located in ./current Date/Pictures in the same folder the Convert and Save.exe files is ran.
 
-View using CitPres Map
-Windows and MacOS
+### View using CitPres Map
+#### Windows and MacOS
 1. Open the app
 2. Confirm whether or not to use the default map and sample location coordinates
 3. Click next
