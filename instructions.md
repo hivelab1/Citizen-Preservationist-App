@@ -1,6 +1,6 @@
-#####App Install
+##App Install
 
-Citizen Preservationist DataCollector
+##Citizen Preservationist DataCollector
 
 Android
 1. Enable Developer options in your Android settings 
@@ -11,16 +11,16 @@ iOS
 1. Download and build CitPres DataCollector Unity project for IOS or download IOS XCode files for local deployment
 2. Using XCode, build application to iOS device using your developer group settings
 
-Citizen Preservationist Map
+##Citizen Preservationist Map
 
 Windows and MacOS
 1. Download desired build folder to yuor location of choice
 2. Navigate to said folder and run executable from there
 
 ---
-Using the Apps
+##Using the Apps
 
-DataCollector App
+##DataCollector App
 1. Launch the app
 2. Fill in and log the unique user and session/location IDs given to you during training
 3. Watch given video guide or proceed to step 4
@@ -32,7 +32,7 @@ DataCollector App
 9. Tap submit button to save photograph and metadata
 10. Repeat until data capture session is done
 
-Retrieving data collected via DataCollector
+##Retrieving data collected via DataCollector
 
 Android
 1. Connect your smartphone to PC via usb
@@ -44,7 +44,7 @@ IOS
 2. Navigate to /var/mobile/Containers/Data/Application/<guid>/Documents/Artifacts/current Date
 3. In your computer, navigate to /Android/data/com.HiveLab.CitizenPreservationist/files/Artifacts/current Date and save the folders with collected data to a known location/folder
 
-Using Convert and Save
+##Using Convert and Save
 
 Windows
 1. Copy the json file (collected data) to a known location in your PC
@@ -55,7 +55,7 @@ Windows
 6. The pictures taken are located in /files/Pictures/current Date
 7. The pictures are also located in ./current Date/Pictures in the same folder the Convert and Save.exe files is ran.
 
-Visualize photos, metadata, and artifact locations using CitPres Map
+##Visualize photos, metadata, and artifact locations using CitPres Map
 
 Windows and MacOS
 1. Open the app
