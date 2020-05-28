@@ -47,13 +47,27 @@ IOS
 ##Using Convert and Save
 
 Windows
-1. Copy the json file (collected data) to a known location in your PC
+1. Copy the json folders (collected data) to a known location in your PC
 2. Transfer "Convert and Save.exe" to this folder
 3. Double click Convert and Save.exe
 4. The json file is now converted in a .png image and metadata into a .csv file (ready to import in your GIS of choice)
 5. All of the jsons are also converted into a json containing all data, and a csv containing all data.
 6. The pictures taken are located in /files/Pictures/current Date
 7. The pictures are also located in ./current Date/Pictures in the same folder the Convert and Save.exe files is ran.
+
+MacOS
+1. Copy the json folders (collected data) to a known location in your PC
+2. Transfer "Convert and Save.py" to this folder
+3. Press command + spacebar to open Spotlight
+4. Open Terminal
+5. Make sure you have python 3.x installed, where x is any version of python 3. (This can be confirmed with the following command:    "python --version") (Most MacOS devices come with python 2.7 installed.)
+6. Navigate to the parent folder where the script and all of the data folders are located
+7. Enter the command: "python3 "Convert and Save.py"" and press enter
+8. The json file is now converted in a .png image and metadata into a .csv file (ready to import in your GIS of choice)
+9. All of the jsons are also converted into a json containing all data, and a csv containing all data.
+10. The pictures taken are located in /files/Pictures/current Date
+11. The pictures are also located in ./current Date/Pictures in the same folder the Convert and Save.exe files is ran.
+
 
 ##Visualize photos, metadata, and artifact locations using CitPres Map
 
